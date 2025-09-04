@@ -280,42 +280,41 @@
     </a>
   </footer>
 
-<script>
-  document.getElementById('generateBtn').addEventListener('click', function() {
-    const inputEl = document.getElementById('pageCount');
-    const so_trang = parseInt(inputEl.value);
-    if (!so_trang || so_trang < 1) {
-      alert('Vui lòng nhập số trang hợp lệ (>= 1).');
-      return;
-    }
+  <script>
+    document.getElementById('generateBtn').addEventListener('click', function() {
+      const inputEl = document.getElementById('pageCount');
+      const so_trang = parseInt(inputEl.value);
+      if (!so_trang || so_trang < 1) {
+        alert('Vui lòng nhập số trang hợp lệ (>= 1).');
+        return;
+      }
 
-    const mat_truoc = [];
-    for (let i = 1; i <= so_trang; i += 2) {
-      mat_truoc.push(i);
-    }
+      const mat_truoc = [];
+      for (let i = 1; i <= so_trang; i += 2) {
+        mat_truoc.push(i);
+      }
 
-    const firstEven = so_trang % 2 === 0 ? so_trang : so_trang - 1;
-    const mat_sau = [];
-    for (let i = firstEven; i >= 2; i -= 2) {
-      mat_sau.push(i);
-    }
+      const firstEven = so_trang % 2 === 0 ? so_trang : so_trang - 1;
+      const mat_sau = [];
+      for (let i = firstEven; i >= 2; i -= 2) {
+        mat_sau.push(i);
+      }
 
-    // 👉 Dùng .join(',') để bỏ khoảng trắng
-    document.getElementById('frontList').innerText = mat_truoc.join(',');
-    document.getElementById('backList').innerText  = mat_sau.join(',');
-    document.getElementById('result').hidden = false;
+      document.getElementById('frontList').innerText = mat_truoc.join(', ');
+      document.getElementById('backList').innerText  = mat_sau.join(', ');
+      document.getElementById('result').hidden = false;
 
-    const warningEl = document.getElementById('warning');
-    if (so_trang % 2 !== 0) {
-      warningEl.innerHTML = `
-      ⚠️ <strong>Số trang lẻ (${so_trang})</strong><br>
-      Trang cuối không có mặt sau.<br>
-      👉 Sau khi in mặt trước, bỏ riêng trang cuối ra rồi in mặt sau các trang còn lại.
-      `;
-    } else {
-      warningEl.innerText = '';
-    }
-  });
-</script>
+      const warningEl = document.getElementById('warning');
+      if (so_trang % 2 !== 0) {
+        warningEl.innerHTML = `
+        ⚠️ <strong>Số trang lẻ (${so_trang})</strong><br>
+        Trang cuối không có mặt sau.<br>
+        👉 Sau khi in mặt trước, bỏ riêng trang cuối ra rồi in mặt sau các trang còn lại.
+        `;
+      } else {
+        warningEl.innerText = '';
+      }
+    });
+  </script>
 </body>
 </html>
