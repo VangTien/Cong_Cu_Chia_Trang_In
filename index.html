@@ -300,8 +300,9 @@
         mat_sau.push(i);
       }
 
-      document.getElementById('frontList').innerText = mat_truoc.join(', ');
-      document.getElementById('backList').innerText  = mat_sau.join(', ');
+      // 👉 bỏ khoảng trắng sau dấu phẩy
+      document.getElementById('frontList').innerText = mat_truoc.join(',');
+      document.getElementById('backList').innerText  = mat_sau.join(',');
       document.getElementById('result').hidden = false;
 
       const warningEl = document.getElementById('warning');
