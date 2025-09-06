@@ -18,11 +18,7 @@
       --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -67,11 +63,7 @@
       flex-wrap: wrap;
     }
 
-    h1 img {
-      width: 38px;
-      height: 38px;
-    }
-
+    h1 img { width: 38px; height: 38px; }
     h1 small {
       display: block;
       font-size: 0.95rem;
@@ -80,10 +72,7 @@
       font-weight: 500;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
-
+    .form-group { margin-bottom: 20px; }
     .form-group label {
       display: block;
       margin-bottom: 6px;
@@ -125,21 +114,13 @@
       box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
     }
 
-    button img {
-      width: 20px;
-      height: 20px;
-    }
-
+    button img { width: 20px; height: 20px; }
     button:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
     }
 
-    .result {
-      margin-top: 28px;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
+    .result { margin-top: 28px; animation: fadeIn 0.6s ease-in-out; }
     .card {
       background: #f9fbfd;
       padding: 18px 20px;
@@ -156,10 +137,7 @@
       color: var(--primary-color);
     }
 
-    .card p {
-      font-size: 1rem;
-      word-wrap: break-word;
-    }
+    .card p { font-size: 1rem; word-wrap: break-word; }
 
     .warning {
       color: var(--accent-color);
@@ -183,27 +161,11 @@
     }
 
     @media (max-width: 480px) {
-      .container {
-        padding: 24px 20px;
-      }
-
-      h1 {
-        font-size: 1.6rem;
-      }
-
-      .card h2 {
-        font-size: 1.05rem;
-      }
-
-      .form-group input {
-        padding: 12px;
-        font-size: 0.95rem;
-      }
-
-      button {
-        font-size: 0.95rem;
-        padding: 12px;
-      }
+      .container { padding: 24px 20px; }
+      h1 { font-size: 1.6rem; }
+      .card h2 { font-size: 1.05rem; }
+      .form-group input { padding: 12px; font-size: 0.95rem; }
+      button { font-size: 0.95rem; padding: 12px; }
     }
 
     footer {
@@ -223,24 +185,18 @@
       gap: 6px;
     }
 
-    footer a img {
-      width: 18px;
-      height: 18px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a img { width: 18px; height: 18px; }
+    footer a:hover { text-decoration: underline; }
   </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVXWQ26GP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-1SVXWQ26GP');
-</script>  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVXWQ26GP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1SVXWQ26GP');
+  </script>  
 </head>
 <body>
   <div class="container">
@@ -299,17 +255,12 @@
       }
 
       const mat_truoc = [];
-      for (let i = 1; i <= so_trang; i += 2) {
-        mat_truoc.push(i);
-      }
+      for (let i = 1; i <= so_trang; i += 2) mat_truoc.push(i);
 
       const firstEven = so_trang % 2 === 0 ? so_trang : so_trang - 1;
       const mat_sau = [];
-      for (let i = firstEven; i >= 2; i -= 2) {
-        mat_sau.push(i);
-      }
+      for (let i = firstEven; i >= 2; i -= 2) mat_sau.push(i);
 
-      // 👉 bỏ khoảng trắng sau dấu phẩy
       document.getElementById('frontList').innerText = mat_truoc.join(',');
       document.getElementById('backList').innerText  = mat_sau.join(',');
       document.getElementById('result').hidden = false;
