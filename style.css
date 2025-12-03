@@ -1,0 +1,246 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #007bff, #00c6ff);
+    --primary-color: #007bff;
+    --bg-color: #f5f7fa;
+    --text-color: #2d3436;
+    --card-bg: #ffffff;
+    --accent-color: #ff9f43;
+    --border-color: #dfe6ed;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .container {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    padding: 32px 28px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h1 {
+    text-align: center;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  h1 img { width: 38px; height: 38px; }
+  h1 small {
+    display: block;
+    font-size: 0.95rem;
+    color: #636e72;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    background: #fff;
+    transition: 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+  }
+  
+  /* Nút chính: Tạo danh sách in (thanh dài) */
+  #generateBtn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-gradient);
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  #generateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
+  }
+  
+  .result { 
+    margin-top: 28px; 
+    animation: fadeIn 0.6s ease-in-out; 
+  }
+  
+  .card {
+    background: #f9fbfd;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border-left: 6px solid var(--primary-color);
+    margin-bottom: 18px;
+    box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.05);
+    position: relative; /* để nút copy căn theo card */
+  }
+  
+  .card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  .card p { 
+    font-size: 1rem; 
+    word-wrap: break-word; 
+  }
+  
+  .warning {
+    display: none; /* mặc định ẩn */
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 500;
+    background-color: #fff8e6;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  /* Nút Copy: nằm góc phải, màu xanh ngọc hài hòa */
+  .copyBtn {
+    background: #00c6ff;
+    color: #fff;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 198, 255, 0.3);
+  
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+  
+  .copyBtn img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .copyBtn:hover {
+    background: #0099cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 153, 204, 0.4);
+  }
+  
+  .guide {
+    font-size: 0.95rem;
+    background-color: #fef9f2;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border-left: 6px solid var(--accent-color);
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 480px) {
+    .container { padding: 24px 20px; }
+    h1 { font-size: 1.6rem; }
+    .card h2 { font-size: 1.05rem; }
+    .form-group input { padding: 12px; font-size: 0.95rem; }
+    #generateBtn { font-size: 0.95rem; padding: 12px; }
+    .copyBtn { font-size: 0.8rem; padding: 5px 8px; }
+  }
+  
+  footer {
+    font-size: 0.95rem;
+    color: #444; /* màu chữ đậm hơn để dễ đọc */
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    padding: 16px 0;
+    border-top: 1px solid var(--border-color); /* đường kẻ mảnh tạo phân cách */
+    background-color: #f9fbfd; /* nền nhạt hài hòa với card */
+  }
+  
+  footer p {
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    background: rgba(0, 123, 255, 0.08); /* nền nhạt để nổi bật link */
+  }
+  
+  footer a img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  footer a:hover {
+    background: rgba(0, 123, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  footer a img { width: 18px; height: 18px; }
+  footer a:hover { text-decoration: underline; }
+  

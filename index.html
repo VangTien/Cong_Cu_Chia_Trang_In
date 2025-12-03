@@ -6,197 +6,7 @@
   <title>Công Cụ Chia Trang In Hai Mặt</title>
   <link rel="icon" type="image/png" href="icons/icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-gradient: linear-gradient(135deg, #007bff, #00c6ff);
-      --primary-color: #007bff;
-      --bg-color: #f5f7fa;
-      --text-color: #2d3436;
-      --card-bg: #ffffff;
-      --accent-color: #ff9f43;
-      --border-color: #dfe6ed;
-      --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .container {
-      background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      max-width: 600px;
-      width: 100%;
-      padding: 32px 28px;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      text-align: center;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    h1 img { width: 38px; height: 38px; }
-    h1 small {
-      display: block;
-      font-size: 0.95rem;
-      color: #636e72;
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      font-size: 1rem;
-      background: #fff;
-      transition: 0.3s;
-    }
-
-    .form-group input:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
-      outline: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      background: var(--primary-gradient);
-      color: #fff;
-      font-size: 1rem;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-    }
-
-    button img { width: 20px; height: 20px; }
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
-    }
-
-    .result { margin-top: 28px; animation: fadeIn 0.6s ease-in-out; }
-    .card {
-      background: #f9fbfd;
-      padding: 18px 20px;
-      border-radius: 14px;
-      border-left: 6px solid var(--primary-color);
-      margin-bottom: 18px;
-      box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.05);
-    }
-
-    .card h2 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: var(--primary-color);
-    }
-
-    .card p { font-size: 1rem; word-wrap: break-word; }
-
-    .warning {
-      color: var(--accent-color);
-      text-align: center;
-      margin-top: 12px;
-      font-weight: 500;
-      background-color: #fff8e6;
-      padding: 12px 14px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-    }
-
-    .guide {
-      font-size: 0.95rem;
-      background-color: #fef9f2;
-      padding: 16px 18px;
-      border-radius: 12px;
-      border-left: 6px solid var(--accent-color);
-      margin-top: 20px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 24px 20px; }
-      h1 { font-size: 1.6rem; }
-      .card h2 { font-size: 1.05rem; }
-      .form-group input { padding: 12px; font-size: 0.95rem; }
-      button { font-size: 0.95rem; padding: 12px; }
-    }
-
-    footer {
-      font-size: 0.9rem;
-      color: #636e72;
-      margin-top: 28px;
-      text-align: center;
-      width: 100%;
-    }
-
-    footer a {
-      color: var(--primary-color);
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    footer a img { width: 18px; height: 18px; }
-    footer a:hover { text-decoration: underline; }
-  </style>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SVXWQ26GP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-1SVXWQ26GP');
-  </script>  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -211,18 +21,22 @@
       <input type="number" id="pageCount" min="1" placeholder="Nhập Tổng Số Trang" />
     </div>
 
-    <button id="generateBtn">
-      Tạo danh sách in
-    </button>
+    <button id="generateBtn">Tạo danh sách in</button>
     
     <div id="result" class="result" hidden>
       <div class="card">
         <h2>📄 Mặt trước (số lẻ, tăng dần)</h2>
         <p id="frontList"></p>
+        <button class="copyBtn" data-target="frontList">
+          <img src="icons/copy.png" alt="Copy"> Copy
+        </button>
       </div>
       <div class="card">
         <h2>📄 Mặt sau (số chẵn, giảm dần)</h2>
         <p id="backList"></p>
+        <button class="copyBtn" data-target="backList">
+          <img src="icons/copy.png" alt="Copy"> Copy
+        </button>
       </div>
       <p id="warning" class="warning"></p>
 
@@ -232,18 +46,18 @@
         2️⃣ <strong>Lật giấy:</strong> In xong mặt trước, giữ nguyên thứ tự giấy, xoay giấy sang mặt trắng rồi đặt lại vào máy.<br><br>
         3️⃣ <strong>Đặt lại vào máy:</strong> Đặt giấy vào khay sao cho mặt trắng nằm phía trên và đầu trang nằm đúng chiều.<br><br>
         4️⃣ <strong>In mặt sau:</strong> Chọn in các trang chẵn theo thứ tự giảm dần.<br><br>
-        ✅ Kết quả: In đúng thứ tự hai mặt giúp tài liệu đẹp, tiết kiệm và dễ sử dụng.
+        ✅ Kết quả: Hoàn thiện bản in chuẩn 2 mặt giấy, đảm bảo chính xác và nâng cao trải nghiệm sử dụng.
       </div>
     </div>
   </div>
 
   <footer>
-    © 2025 Nguyễn Văng Ngọc Tiến  
+    <p>© 2025 Nguyễn Văng Ngọc Tiến. Mọi quyền được bảo lưu.</p>
     <a href="https://zalo.me/0824808982" target="_blank">
-      <img src="icons/zalo.png" alt="Zalo">  0824808982
+      <img src="icons/zalo.png" alt="Zalo"> 0824808982
     </a>
   </footer>
-
+  
   <script>
     document.getElementById('generateBtn').addEventListener('click', function() {
       const inputEl = document.getElementById('pageCount');
@@ -267,13 +81,27 @@
       const warningEl = document.getElementById('warning');
       if (so_trang % 2 !== 0) {
         warningEl.innerHTML = `
-        ⚠️ <strong>Số trang lẻ (${so_trang})</strong><br>
-        Trang cuối không có mặt sau.<br>
-        👉 Sau khi in mặt trước, bỏ riêng trang cuối ra rồi in mặt sau các trang còn lại.
+          ⚠️ <strong>Số trang lẻ (${so_trang})</strong><br>
+          Trang cuối không có mặt sau.<br>
+          👉 Sau khi in mặt trước, bỏ riêng trang cuối ra rồi in mặt sau các trang còn lại.
         `;
+        warningEl.style.display = "block";
       } else {
-        warningEl.innerText = '';
+        warningEl.style.display = "none";
       }
+    });
+
+    // Copy nhanh danh sách
+    document.querySelectorAll('.copyBtn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const text = document.getElementById(targetId).innerText;
+        if (text.trim() !== "") {
+          navigator.clipboard.writeText(text).then(() => {
+            alert("📋 Đã sao chép danh sách: " + text);
+          });
+        }
+      });
     });
   </script>
 </body>
